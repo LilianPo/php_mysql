@@ -20,14 +20,14 @@
     <body>
         <div class="container">
             <h1>Maailma imelikumad palad</h1>
-            <form action="#" method="get">
+            <form action="" method="get">
                 Otsi:<input type="text" name="s">
                 <input type="Submit" value="Otsi">
             </form>
 <div class="row row-cols-1 row-cols-md-3 g-4 pt-4">
             <?php
 //otsing
-    if (isset($_GET["s"])) {
+    if (!empty($_GET["s"])) {
         $s = $_GET["s"];
         $paring = 'SELECT album, hind FROM albumid WHERE album LIKE "%'.$s.'%"';
     }else {
